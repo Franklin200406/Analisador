@@ -1,0 +1,8 @@
+inteiro x;
+// comentario de linha
+x = 5;
+/* comentario
+   de bloco */
+texto status;
+status = "ok";
+

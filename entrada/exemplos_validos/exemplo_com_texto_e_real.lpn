@@ -1,0 +1,5 @@
+real preco;
+texto mensagem;
+preco = 19.90;
+mensagem = "valor aprovado";
+

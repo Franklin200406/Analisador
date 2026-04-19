@@ -1,4 +1,3 @@
-
 inteiro x;
 real y;
 texto mensagem;
@@ -33,6 +32,3 @@ para (i = 0; i < 3; i = i + 1) {
             mensagem = "iteracao";
     }
 }
-
-// Para testar erro lexico, experimente inserir um simbolo invalido, como:
-// @

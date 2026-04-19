@@ -99,10 +99,12 @@ O lexer implementado no projeto segue estas regras gerais:
 Os arquivos principais deste projeto sao:
 
 - `definicao_linguagem_lpn.md`: documenta a linguagem reconhecida.
-- `codigo_exemplo.lpn`: arquivo onde o codigo de entrada pode ser escrito ou alterado.
-- `lexer_lpn.py`: implementa a analise lexica e controla a execucao principal.
-- `html_saida.py`: gera o HTML final com tabela de simbolos ou mensagem de erro.
-- `resultado_analise_lexica.html`: saida gerada apos a execucao.
+- `entrada/codigo_exemplo.lpn`: arquivo onde o codigo de entrada pode ser escrito ou alterado.
+- `entrada/exemplos_validos/`: colecao de exemplos com entrada lexicamente valida.
+- `entrada/exemplos_invalidos/`: colecao de exemplos com erros lexicos para teste.
+- `src/lexer_lpn.py`: implementa a analise lexica e controla a execucao principal.
+- `src/html_saida.py`: gera o HTML final com tabela de simbolos ou mensagem de erro.
+- `saida/resultado_analise_lexica.html`: saida gerada apos a execucao.
 
 ## Observacao
 

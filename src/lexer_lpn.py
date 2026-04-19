@@ -6,9 +6,9 @@ from html_saida import gerar_erro_html, gerar_tabela_html
 
 
 # ============================================================================
-# ANALISADOR LEXICO DA LPN
+# PARTE 2 - ANALISADOR LEXICO DA LPN
 # Este arquivo contem toda a implementacao do lexer.
-# O codigo que sera analisado deve ser escrito em "codigo_exemplo.lpn".
+# O codigo que sera analisado deve ser escrito em "entrada/codigo_exemplo.lpn".
 # A definicao resumida da linguagem esta em "definicao_linguagem_lpn.md".
 # ============================================================================
 
@@ -124,20 +124,22 @@ class AnalisadorLexicoLPN:
                 coluna = len(trecho.rsplit("\n", 1)[-1]) + 1
                 raise ErroLexico("Comentario de bloco nao encerrado", linha, coluna)
             abertura = codigo_fonte.find("/*", fechamento + 2)
+
+
 def carregar_codigo_fonte():
     """
     Carrega o codigo LPN a partir de um arquivo.
-    Se nenhum caminho for informado, usa o arquivo codigo_exemplo.lpn na mesma pasta.
+    Se nenhum caminho for informado, usa o arquivo entrada/codigo_exemplo.lpn.
     """
-    base_dir = Path(__file__).resolve().parent
-    caminho_entrada = Path(sys.argv[1]) if len(sys.argv) > 1 else base_dir / "codigo_exemplo.lpn"
+    projeto_dir = Path(__file__).resolve().parent.parent
+    caminho_entrada = Path(sys.argv[1]) if len(sys.argv) > 1 else projeto_dir / "entrada" / "codigo_exemplo.lpn"
     return caminho_entrada.resolve(), caminho_entrada.read_text(encoding="utf-8")
 
 
 def main():
     analisador = AnalisadorLexicoLPN()
-    base_dir = Path(__file__).resolve().parent
-    arquivo_saida = base_dir / "resultado_analise_lexica.html"
+    projeto_dir = Path(__file__).resolve().parent.parent
+    arquivo_saida = projeto_dir / "saida" / "resultado_analise_lexica.html"
 
     try:
         caminho_entrada, codigo_fonte = carregar_codigo_fonte()

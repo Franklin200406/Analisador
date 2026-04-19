@@ -5,7 +5,7 @@
             "name": "Executar Lexer LPN",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/lexer_lpn.py",
+            "program": "${workspaceFolder}/src/lexer_lpn.py",
             "console": "internalConsole",
             "cwd": "${workspaceFolder}",
             "justMyCode": true
