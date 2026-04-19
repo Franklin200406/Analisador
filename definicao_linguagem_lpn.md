@@ -84,9 +84,26 @@ Textos entre aspas duplas:
 - Linha: `// comentario`
 - Bloco: `/* comentario */`
 
+## Resumo tecnico do reconhecimento
+
+O lexer implementado no projeto segue estas regras gerais:
+
+- palavras-chave sao reconhecidas a partir de identificadores validos;
+- numeros inteiros e reais possuem tokens distintos;
+- comentarios e espacos em branco sao ignorados durante a tokenizacao;
+- simbolos nao reconhecidos geram erro lexico;
+- a posicao do erro e informada com linha e coluna.
+
 ## Organizacao do projeto
 
-- [definicao_linguagem_lpn.md](C:\Users\enzof\OneDrive\Documentos\New project\definicao_linguagem_lpn.md): definicao da linguagem
-- [codigo_exemplo.lpn](C:\Users\enzof\OneDrive\Documentos\New project\codigo_exemplo.lpn): arquivo para voce escrever o codigo de entrada
-- [lexer_lpn.py](C:\Users\enzof\OneDrive\Documentos\New project\lexer_lpn.py): analisador lexico em Python
-- [resultado_analise_lexica.html](C:\Users\enzof\OneDrive\Documentos\New project\resultado_analise_lexica.html): saida gerada apos a execucao
+Os arquivos principais deste projeto sao:
+
+- `definicao_linguagem_lpn.md`: documenta a linguagem reconhecida.
+- `codigo_exemplo.lpn`: arquivo onde o codigo de entrada pode ser escrito ou alterado.
+- `lexer_lpn.py`: implementa a analise lexica e controla a execucao principal.
+- `html_saida.py`: gera o HTML final com tabela de simbolos ou mensagem de erro.
+- `resultado_analise_lexica.html`: saida gerada apos a execucao.
+
+## Observacao
+
+Este arquivo descreve a linguagem e a organizacao geral do projeto. A implementacao do lexer e da geracao de HTML esta separada em modulos diferentes para deixar o codigo mais claro e facil de manter.

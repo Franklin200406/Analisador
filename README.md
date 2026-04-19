@@ -1,101 +1,68 @@
 # Analisador Lexico da LPN
 
-Este projeto implementa um analisador léxico em Python para a linguagem procedural **LPN (Linguagem Procedural Nobre)**, utilizando a biblioteca `re` e expressoes regulares.
+Este projeto implementa um analisador lexico em Python para a linguagem **LPN (Linguagem Procedural Nobre)**.
 
-O programa le um codigo-fonte escrito em LPN, converte esse codigo em tokens e gera um arquivo HTML com o resultado da analise. Quando existe algum erro lexico, o HTML passa a exibir a mensagem de erro com a linha e a coluna correspondentes.
+O programa le um codigo-fonte em LPN, reconhece tokens com expressoes regulares e gera um arquivo HTML com o resultado da analise. Quando ocorre erro lexico, o HTML apresenta a mensagem correspondente com linha e coluna.
 
-## Objetivo do projeto
+## Objetivo
 
-O objetivo deste trabalho e:
+O projeto foi desenvolvido para:
 
-- reconhecer lexemas válidos da linguagem LPN;
-- transformar a entrada em uma lista de tokens no formato `(TIPO_TOKEN, valor)`;
+- reconhecer lexemas validos da linguagem LPN;
+- transformar a entrada em tokens no formato `(TIPO_TOKEN, valor)`;
 - ignorar espacos em branco e comentarios;
-- detectar simbolos invalidos e informar erro lexico;
-- gerar um arquivo HTML com a tabela de simbolos ou com a mensagem de erro.
+- detectar erros lexicos;
+- gerar uma saida HTML com sucesso ou erro.
 
-## Estrutura dos arquivos
+## Estrutura do projeto
 
-Os arquivos essenciais do projeto são:
+Os arquivos principais sao:
 
-- `definicao_linguagem_lpn.md`
-  Arquivo com a definicao da linguagem, contendo palavras-chave, operadores, delimitadores e regex utilizadas.
+- `definicao_linguagem_lpn.md`: documentacao da linguagem reconhecida pelo analisador.
+- `codigo_exemplo.lpn`: arquivo de entrada usado para os testes.
+- `lexer_lpn.py`: modulo principal com a logica do lexer e o fluxo de execucao.
+- `html_saida.py`: modulo responsavel pela geracao do HTML de resultado.
+- `resultado_analise_lexica.html`: arquivo gerado apos a execucao.
+- `.vscode/launch.json`: configuracao para executar o projeto pelo VS Code.
 
-- `codigo_exemplo.lpn`
-  Arquivo de entrada. E nele que o codigo LPN deve ser escrito para ser analisado.
+## Requisitos
 
-- `lexer_lpn.py`
-  Implementacao do analisador léxico em Python.
+Para executar o projeto, voce precisa de:
 
-- `.vscode/launch.json`
-  Configuracao para executar o projeto diretamente no VS Code com `F5`.
-
-## Requisitos para execucao
-
-Para executar o projeto, e necessario ter:
-
-- Python 3 instalado no computador
-- VS Code instalado
-- extensao `Python` da Microsoft instalada no VS Code
+- Python 3;
+- VS Code;
+- extensao `Python` da Microsoft no VS Code.
 
 ## Como executar no VS Code
 
-Siga exatamente estes passos:
-
 1. Abra o VS Code.
+2. Escolha `File > Open Folder`.
+3. Abra a pasta do projeto.
+4. Edite o arquivo `codigo_exemplo.lpn` com o codigo que deseja analisar.
+5. Se necessario, selecione o interpretador Python em `Ctrl + Shift + P` > `Python: Select Interpreter`.
+6. Abra o arquivo `lexer_lpn.py`.
+7. Pressione `F5`.
+8. Se o VS Code solicitar a configuracao de execucao, selecione `Executar Lexer LPN`.
+9. Ao final, abra `resultado_analise_lexica.html`.
 
-2. No VS Code, escolha `File > Open Folder`.
+## Fluxo de funcionamento
 
-3. Abra a pasta do projeto:
+O funcionamento do projeto acontece assim:
 
-```text
-caminho/para/sua/pasta/do/projeto
-```
+1. `lexer_lpn.py` le o conteudo de `codigo_exemplo.lpn`.
+2. O lexer reconhece os tokens com base nas expressoes regulares definidas na implementacao.
+3. Se nao houver erro lexico, `html_saida.py` gera a tabela de simbolos em HTML.
+4. Se houver erro lexico, `html_saida.py` gera um HTML com a mensagem de erro.
 
-4. No painel lateral do VS Code, abra o arquivo `codigo_exemplo.lpn`.
+## Onde editar a entrada
 
-5. Escreva ou edite o codigo LPN que deseja analisar.
-
-6. Se for a primeira execucao, selecione o interpretador do Python:
-
-```text
-Ctrl + Shift + P
-Python: Select Interpreter
-```
-
-7. Escolha o Python instalado na maquina.
-
-8. Abra o arquivo `lexer_lpn.py`.
-
-9. Pressione `F5` para executar o analisador.
-
-10. Se o VS Code solicitar uma configuracão de execucão, selecione:
-
-```text
-Executar Lexer LPN
-```
-
-11. Aguarde a execucão terminar.
-
-12. Apos a execucao, abra o arquivo:
-
-```text
-resultado_analise_lexica.html
-```
-
-Esse arquivo sera criado ou atualizado automaticamente pelo programa.
-
-## Onde escrever o codigo que sera analisado
-
-O codigo de entrada deve ser escrito em:
+O codigo que sera analisado deve ser escrito em:
 
 ```text
 codigo_exemplo.lpn
 ```
 
-Tudo o que estiver nesse arquivo sera lido pelo analisador lexico.
-
-## Onde o resultado aparece
+## Onde ver o resultado
 
 O resultado da analise aparece em:
 
@@ -105,11 +72,8 @@ resultado_analise_lexica.html
 
 Esse arquivo pode apresentar dois cenarios:
 
-- **Sucesso**
-  Mostra o status da analise e a tabela de simbolos com os tokens reconhecidos.
-
-- **Erro lexico**
-  Mostra uma mensagem informando o simbolo invalido encontrado e a posicao aproximada no codigo, com linha e coluna.
+- sucesso: mostra o status da analise e a tabela de simbolos;
+- erro lexico: mostra a mensagem de erro com linha e coluna.
 
 ## Exemplo de uso
 
@@ -120,7 +84,7 @@ inteiro x;
 x = 10;
 ```
 
-Exemplo esperado de tokens:
+Saida esperada de tokens no terminal:
 
 ```text
 ('INTEIRO', 'inteiro')
@@ -134,7 +98,7 @@ Exemplo esperado de tokens:
 
 ## Como testar erro lexico
 
-Para verificar se o analisador detecta erro lexico, escreva um simbolo invalido no arquivo `codigo_exemplo.lpn`, por exemplo:
+Para verificar o tratamento de erro, escreva um simbolo invalido em `codigo_exemplo.lpn`, por exemplo:
 
 ```text
 inteiro x;
@@ -143,47 +107,20 @@ inteiro x;
 
 Depois execute novamente com `F5`.
 
-O arquivo `resultado_analise_lexica.html` devera exibir uma mensagem semelhante a:
+O HTML gerado deve exibir uma mensagem semelhante a:
 
 ```text
 Simbolo invalido encontrado: '@' (linha 2, coluna 1)
 ```
 
-## O que cada arquivo faz
+## Resumo das responsabilidades
 
-### `definicao_linguagem_lpn.md`
+- `lexer_lpn.py` concentra a analise lexica, a leitura do arquivo de entrada e a execucao principal.
+- `html_saida.py` concentra a geracao da saida HTML.
+- `definicao_linguagem_lpn.md` descreve os elementos reconhecidos pela linguagem.
 
-Documenta formalmente os elementos da linguagem reconhecidos pelo lexer:
+## Observacoes
 
-- palavras-chave;
-- identificadores;
-- numeros inteiros e reais;
-- strings;
-- operadores;
-- delimitadores;
-- comentarios.
-
-### `codigo_exemplo.lpn`
-
-Representa a entrada do analisador. Este arquivo existe para separar claramente:
-
-- a definicao da linguagem;
-- o codigo fonte de exemplo;
-- a implementacao do analisador.
-
-### `lexer_lpn.py`
-
-Este arquivo:
-
-- le o conteudo de `codigo_exemplo.lpn`;
-- tokeniza o conteudo com expressoes regulares;
-- ignora comentarios e espacos em branco;
-- detecta erro lexico;
-- gera o arquivo `resultado_analise_lexica.html`.
-
-## Observacoes importantes para avaliacao
-
-- O projeto foi organizado para que a avaliacao possa ser feita diretamente no VS Code.
 - Nao e necessario editar o codigo Python para testar novas entradas.
-- Basta alterar `codigo_exemplo.lpn`, executar `lexer_lpn.py` com `F5` e abrir o HTML gerado.
-- O HTML final serve como evidência visual do resultado da analise.
+- Basta alterar `codigo_exemplo.lpn`, executar `lexer_lpn.py` e abrir o HTML gerado.
+- A separacao entre lexer e geracao de HTML deixa o projeto mais organizado e mais facil de manter.
