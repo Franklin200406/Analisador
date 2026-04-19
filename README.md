@@ -49,7 +49,7 @@ Siga exatamente estes passos:
 3. Abra a pasta do projeto:
 
 ```text
-C:\Users\enzof\OneDrive\Documentos\Analisador
+caminho/para/sua/pasta/do/projeto
 ```
 
 4. No painel lateral do VS Code, abra o arquivo `codigo_exemplo.lpn`.
