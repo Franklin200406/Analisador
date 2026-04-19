@@ -6,7 +6,7 @@ from html_saida import gerar_erro_html, gerar_tabela_html
 
 
 # ============================================================================
-# PARTE 2 - ANALISADOR LEXICO DA LPN
+# ANALISADOR LEXICO DA LPN
 # Este arquivo contem toda a implementacao do lexer.
 # O codigo que sera analisado deve ser escrito em "entrada/codigo_exemplo.lpn".
 # A definicao resumida da linguagem esta em "definicao_linguagem_lpn.md".
