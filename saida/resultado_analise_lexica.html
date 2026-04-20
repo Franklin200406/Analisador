@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Simbolos - LPN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f6f8;
+            color: #1f2933;
+        }
+        .secao {
+            margin-bottom: 28px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .sucesso {
+            color: #166534;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #d9e2ec;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #102a43;
+            color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background: #f8fbff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultado da Analise Lexica da LPN</h1>
+
+    <section class="secao">
+        <h2>Status da Analise</h2>
+        <p class="sucesso">Analise concluida com sucesso. Nenhum erro lexico foi encontrado.</p>
+    </section>
+
+    <section class="secao">
+        <h2>Tabela de Simbolos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo do Token</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr><td>INTEIRO</td><td>inteiro</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>REAL</td><td>real</td></tr>
+        <tr><td>ID</td><td>y</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>TEXTO</td><td>texto</td></tr>
+        <tr><td>ID</td><td>mensagem</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>INTEIRO</td><td>inteiro</td></tr>
+        <tr><td>ID</td><td>i</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>NUM_INT</td><td>10</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>y</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>NUM_REAL</td><td>3.14</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>mensagem</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>STRING</td><td>&quot;Ola, LPN!&quot;</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>FUNCAO</td><td>funcao</td></tr>
+        <tr><td>ID</td><td>soma</td></tr>
+        <tr><td>ABRE_PAREN</td><td>(</td></tr>
+        <tr><td>ID</td><td>a</td></tr>
+        <tr><td>VIRGULA</td><td>,</td></tr>
+        <tr><td>ID</td><td>b</td></tr>
+        <tr><td>FECHA_PAREN</td><td>)</td></tr>
+        <tr><td>ABRE_CHAVE</td><td>{</td></tr>
+        <tr><td>RETORNE</td><td>retorne</td></tr>
+        <tr><td>ID</td><td>a</td></tr>
+        <tr><td>MAIS</td><td>+</td></tr>
+        <tr><td>ID</td><td>b</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>FECHA_CHAVE</td><td>}</td></tr>
+        <tr><td>PROCEDIMENTO</td><td>procedimento</td></tr>
+        <tr><td>ID</td><td>mostrar</td></tr>
+        <tr><td>ABRE_PAREN</td><td>(</td></tr>
+        <tr><td>FECHA_PAREN</td><td>)</td></tr>
+        <tr><td>ABRE_CHAVE</td><td>{</td></tr>
+        <tr><td>SE</td><td>se</td></tr>
+        <tr><td>ABRE_PAREN</td><td>(</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>MAIOR_IGUAL</td><td>&gt;=</td></tr>
+        <tr><td>NUM_INT</td><td>10</td></tr>
+        <tr><td>E_LOGICO</td><td>&amp;&amp;</td></tr>
+        <tr><td>ID</td><td>y</td></tr>
+        <tr><td>DIFERENTE</td><td>!=</td></tr>
+        <tr><td>NUM_INT</td><td>0</td></tr>
+        <tr><td>FECHA_PAREN</td><td>)</td></tr>
+        <tr><td>ABRE_CHAVE</td><td>{</td></tr>
+        <tr><td>ID</td><td>mensagem</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>STRING</td><td>&quot;valor valido&quot;</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>FECHA_CHAVE</td><td>}</td></tr>
+        <tr><td>SENAO</td><td>senao</td></tr>
+        <tr><td>ABRE_CHAVE</td><td>{</td></tr>
+        <tr><td>ID</td><td>mensagem</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>STRING</td><td>&quot;valor invalido&quot;</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>FECHA_CHAVE</td><td>}</td></tr>
+        <tr><td>FECHA_CHAVE</td><td>}</td></tr>
+        <tr><td>ENQUANTO</td><td>enquanto</td></tr>
+        <tr><td>ABRE_PAREN</td><td>(</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>MENOR</td><td>&lt;</td></tr>
+        <tr><td>NUM_INT</td><td>20</td></tr>
+        <tr><td>FECHA_PAREN</td><td>)</td></tr>
+        <tr><td>ABRE_CHAVE</td><td>{</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>MAIS</td><td>+</td></tr>
+        <tr><td>NUM_INT</td><td>1</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>CONTINUE</td><td>continue</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>FECHA_CHAVE</td><td>}</td></tr>
+        <tr><td>PARA</td><td>para</td></tr>
+        <tr><td>ABRE_PAREN</td><td>(</td></tr>
+        <tr><td>ID</td><td>i</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>NUM_INT</td><td>0</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>i</td></tr>
+        <tr><td>MENOR</td><td>&lt;</td></tr>
+        <tr><td>NUM_INT</td><td>3</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>i</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>ID</td><td>i</td></tr>
+        <tr><td>MAIS</td><td>+</td></tr>
+        <tr><td>NUM_INT</td><td>1</td></tr>
+        <tr><td>FECHA_PAREN</td><td>)</td></tr>
+        <tr><td>ABRE_CHAVE</td><td>{</td></tr>
+        <tr><td>ESCOLHA</td><td>escolha</td></tr>
+        <tr><td>ABRE_PAREN</td><td>(</td></tr>
+        <tr><td>ID</td><td>i</td></tr>
+        <tr><td>FECHA_PAREN</td><td>)</td></tr>
+        <tr><td>ABRE_CHAVE</td><td>{</td></tr>
+        <tr><td>CASO</td><td>caso</td></tr>
+        <tr><td>NUM_INT</td><td>1</td></tr>
+        <tr><td>DOIS_PONTOS</td><td>:</td></tr>
+        <tr><td>PARE</td><td>pare</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>PADRAO</td><td>padrao</td></tr>
+        <tr><td>DOIS_PONTOS</td><td>:</td></tr>
+        <tr><td>ID</td><td>mensagem</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>STRING</td><td>&quot;iteracao&quot;</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>FECHA_CHAVE</td><td>}</td></tr>
+        <tr><td>FECHA_CHAVE</td><td>}</td></tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
